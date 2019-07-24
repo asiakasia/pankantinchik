@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link	href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <title>Test Task</title> 
+ 
+ </head>
+ <style>
+ *{
+ box-sizing: border-box;
+ margin:0px;
+ padding:0px;
+ }
+ body{
+ background:url(53.jpg) center no-repeat fixed;
+ background-size: cover;
+ font-family: 'Poppins', sans-serif;
+ }
+ header{
+ width:100%;
+ text-align: center;
+ margin-top:40px;
+ margin-bottom:20px;
+ text-shadow:0px 1px 0px 0px white;
+ }
+ h1{
+ font-family: 'Arial', sans-serif;
+ }
+ footer{
+ width:100%;
+ color:white;
+ text-align:center;
+ display:block;
+ padding-top: 30px;
+ cursor: pointer;
+ }
+ footer button{
+ position:relative;
+ background-image: linear-gradient(to top right, rgb(60,96,160), rgb(74,122,185));
+ color:white;
+ border:1px solid rgb(49,85,137);
+ font-family: 'Arial', sans-serif;
+ padding:10px 10px 10px 30px;
+ box-shadow:inset 0px 7px 6px -7px white;
+ margin-bottom:25px;
+ cursor: pointer;
+ }
+ footer button::before{
+ content:"+";
+ font: 30px "Arial Black";
+ color:rgb(54,78,114);
+ position:absolute;
+ left:3px;
+ top:-4px;
+ text-shadow:0px 1px 0px 0px rgba(255,255,255,0.3), 0px -2px 0px 0px rgb(41,56,79);
+ }
+ div{
+ width: 650px;
+ height:auto;
+ margin:auto;
+ align-items: center;
+ cursor:pointer;
+ border:1px solid rgb(159,159,159);
+ border-radius:0px 0px 10px 10px;
+ overflow: hidden;
+ box-shadow:0px 1px 1px 0px rgb(185,161,73);
+ }
+ .p2{
+ position:relative;
+ width:650px;
+ background-image: linear-gradient(to top right, rgb(60,96,160), rgb(74,122,185));
+ border:1px solid rgb(49,85,137);
+ box-shadow:inset 0px 7px 6px -7px white;
+ padding:10px 10px 10px 40px;
+ color:white;
+ }
+ .p2::before{
+ content:"\f073";
+ font-family:FontAwesome;
+ position:absolute;
+ font-size:25px;
+ color:rgb(38,48,64);
+ left:5px;
+ top:10px;
+ }
+ #but1, #but2{
+ width:35px;
+ height:25px;
+ border:transparent;
+ background-color:transparent;
+ cursor:pointer;
+ }
+  #but1{
+ position: absolute;
+ right:55px;
+ border-right:1px solid rgb(152,176,210);
+ }
+   #but2{
+ position: absolute;
+ right:15px;
+ }
+ #but1::before{
+ font-family:FontAwesome;
+ position:absolute;
+ content:"\f040";
+ font-size:25px;
+ top:0px;
+ right:10px;
+ color:rgb(152,176,210);
+ }
+  #but2::before{
+ font-family:FontAwesome;
+ position:absolute;
+ content:"\f014";
+ font-size:25px;
+ top:0px;
+ right:4px;
+ color:rgb(152,176,210);
+ }
+ .Start{
+ position:absolute;
+ width:649px;
+ border:1px solid gray;
+ background-color:rgb(220,220,220);
+ padding:10px;
+ height:50px;
+ }
+ .GreenPlus{
+ font: 40px "Arial Black";
+ color:rgb(88,144,114);
+ position:relative;
+ top:-15px;
+ text-shadow:0px 1px 0px 0px rgba(255,255,255,0.3), 0px -2px 0px 0px rgb(41,56,79);
+ margin-right:15px;
+ border:1px solid transparent;
+ background: transparent;
+ cursor:pointer;
+ }
+ .AddTask{
+ font-size: 15px;
+ color:white;
+ background-image:linear-gradient(rgb(145,200,171), rgb(80,135,103));
+ border:1px solid rgb(68,117,87);
+ border-radius:0px 3px 3px 0px;
+ padding: 5px;
+ cursor:pointer;
+ width:120px;
+ position:absolute;
+ right:10px;
+ }
+ .typing{
+ position:absolute;
+ width:450px;
+ height:30px;
+ border-top:1px solid black;
+ padding-left:10px;
+ }
+ ul{
+ border:1px solid rgb(231,235,234);
+ background-color:white;
+ font: 14px Arial;
+ color: rgb(159,159,159);
+ width:650px;
+ }
+ input[type="checkbox"] {
+ margin:7px;
+ }
+ i{
+ text-align: center;
+ color: transparent;
+ width:20px;
+ }
+li{
+ list-style-type: none;
+ border-top:1px solid rgb(231,235,234);
+}
+li:hover{
+ background-color: rgb(252,254,213);
+}
+li:hover i{
+ color:rgb(153,153,153);
+}
+#checkbox1,#checkbox2,#checkbox3,#checkbox4,#checkbox5,#checkbox6,#checkbox7,#checkbox8{
+ width:35px;
+}
+.txt{
+ padding:10px;
+ width:520px;
+ background:transparent;
+ border:none;
+ resize:none;
+ overflow:auto;
+ cursor:pointer;
+ font:14px Poppins black;
+ border-right:1px solid rgb(231,235,234);
+ border-left:4px double rgb(239,218,223);
+  }
+.icons{
+  width:35px;
+}
+</style>
+</head>
+ <body>
+   <header>
+   <h1>SIMPLE TODO LISTS</h1>
+   <p>FROM RUBY GARAGE</p>
+   </header>
+   <div id="div1">
+   <p class="p2">Complete the test task for Ruby Garage
+   <button id="but1"></button>
+   <button id="but2" class="divTrash1"></button>
+   </p>
+   <span class="Start">
+   <button class="GreenPlus">+</button>
+   <input class="typing" type="text" placeholder="Start typing here to create a task...">
+   <button class="AddTask">Add Task</button>
+   </span></br></br>
+   <ul id="T1">
+  <li id="tr1"><label><input type="checkbox"  id="checkbox1"/><textarea class="txt" id="myTextarea1" rows="1" disabled>Open this mock-up in Adobe Fireworks</textarea></label><span class="icons"><i class='fas fa-sort'></i><i>&#448;</i><i class='fas fa-pencil-alt' onclick="myFunction1()"></i><i>&#448;</i><i class='far fa-trash-alt' id="trash_1"></i></span></li>
+  <li id="tr2"><label><input type="checkbox"  id="checkbox2"/><textarea class="txt" id="myTextarea2" rows="1" disabled>Attentively check the file</textarea></label><span class="icons"><i class='fas fa-sort'></i><i>&#448;</i><i class='fas fa-pencil-alt' onclick="myFunction2()"></i><i>&#448;</i><i class='far fa-trash-alt' id="trash_2"></i></span></li>
+  <li id="tr3"><label><input type="checkbox"  id="checkbox3"/><textarea class="txt" id="myTextarea3" rows="1" disabled>Write HTML & CSS</textarea></label><span class="icons"><i class='fas fa-sort'></i><i>&#448;</i><i class='fas fa-pencil-alt' onclick="myFunction3()"></i><i>&#448;</i><i class='far fa-trash-alt' id="trash_3"></i></span></li>
+  <li id="tr4"><label><input type="checkbox"  id="checkbox4"/><textarea class="txt" id="myTextarea4" rows="2" disabled> Add Javascript to iplement adding/editing/removing fot todo items and lists taking into account as more use cases as possible</textarea></label><span class="icons"><i class='fas fa-sort'></i><i>&#448;</i><i class='fas fa-pencil-alt' onclick="myFunction4()"></i><i>&#448;</i><i class='far fa-trash-alt' id="trash_4"></i></span></li>
+   </ul>
+  </div>
+<br>
+  <div id="div2">
+    <p class="p2">For Home
+    <button id="but1"></button>
+    <button id="but2" class="divTrash2"></button>
+    </p>
+    <span class="Start">
+    <button class="GreenPlus">+</button>
+    <input class="typing" type="text" placeholder="Start typing here to create a task...">
+    <button class="AddTask">Add Task</button>
+    </span></br></br>
+    <ul id="T2">
+      <li id="tr5"><label><input type="checkbox"  id="checkbox5"/><textarea class="txt" id="myTextarea5" rows="1" disabled>Buy milk</textarea></label><span class="icons"><i class='fas fa-sort'></i><i>&#448;</i><i class='fas fa-pencil-alt' onclick="myFunction5()"></i><i>&#448;</i><i class='far fa-trash-alt' id="trash_5"></i></span></li>
+      <li id="tr6"><label><input type="checkbox"  id="checkbox6"/><textarea class="txt" id="myTextarea6" rows="1" disabled>Call Mam</textarea></label><span class="icons"><i class='fas fa-sort'></i><i>&#448;</i><i class='fas fa-pencil-alt' onclick="myFunction6()"></i><i>&#448;</i><i class='far fa-trash-alt' id="trash_6"></i></span></li>
+      <li id="tr7"><label><input type="checkbox"  id="checkbox7"/><textarea class="txt" id="myTextarea7" rows="1" disabled>Clean the room</textarea></label><span class="icons"><i class='fas fa-sort'></i><i>&#448;</i><i class='fas fa-pencil-alt' onclick="myFunction7()"></i><i>&#448;</i><i class='far fa-trash-alt' id="trash_7"></i></span></li>
+      <li id="tr8"><label><input type="checkbox"  id="checkbox8"/><textarea class="txt" id="myTextarea8" rows="1" disabled>Repair the DVD Player</textarea></label><span class="icons"><i class='fas fa-sort'></i><i>&#448;</i><i class='fas fa-pencil-alt' onclick="myFunction8()"></i><i>&#448;</i><i class='far fa-trash-alt' id="trash_8"></i></span></li>
+       </ul>
+  </div>
+   <footer>
+   <button>Add TODO List</button></br>
+   <span>&#169;Ruby Garage</span>
+   </footer>
+
+   <script>
+      var tr1;
+      $( "#trash_1" ).click(function() {
+        if ( tr1 ) {
+          tr1.appendTo( "body" );
+          tr1 = null;
+        } else {
+          tr1 = $( "#tr1" ).detach();
+        }
+      });
+      var tr2;
+      $( "#trash_2" ).click(function() {
+        if ( tr2 ) {
+          tr2.appendTo( "body" );
+          tr2 = null;
+        } else {
+          tr2 = $( "#tr2" ).detach();
+        }
+      });
+      var tr3;
+      $( "#trash_3" ).click(function() {
+        if ( tr3 ) {
+          tr3.appendTo( "body" );
+          tr3 = null;
+        } else {
+          tr3 = $( "#tr3" ).detach();
+        }
+      });
+      var tr4;
+      $( "#trash_4" ).click(function() {
+        if ( tr4 ) {
+          tr4.appendTo( "body" );
+          tr4 = null;
+        } else {
+          tr4 = $( "#tr4" ).detach();
+        }
+      });
+      var tr5;
+      $( "#trash_5" ).click(function() {
+        if ( tr5 ) {
+          tr5.appendTo( "body" );
+          tr5 = null;
+        } else {
+          tr5 = $( "#tr5" ).detach();
+        }
+      });
+      var tr6;
+      $( "#trash_6" ).click(function() {
+        if ( tr6 ) {
+          tr6.appendTo( "body" );
+          tr6 = null;
+        } else {
+          tr6 = $( "#tr6" ).detach();
+        }
+      });
+      var tr7;
+      $( "#trash_7" ).click(function() {
+        if ( tr7 ) {
+          tr7.appendTo( "body" );
+          tr7 = null;
+        } else {
+          tr7 = $( "#tr7" ).detach();
+        }
+      });
+      var tr8;
+      $( "#trash_8" ).click(function() {
+        if ( tr8 ) {
+          tr8.appendTo( "body" );
+          tr8 = null;
+        } else {
+          tr8 = $( "#tr8" ).detach();
+        }
+      });
+      var divTrash1;
+      $( ".divTrash1" ).click(function() {
+        if ( divTrash1 ) {
+          divTrash1.appendTo( "body" );
+          divTrash1 = null;
+        } else {
+          divTrash1 = $( "#div1" ).detach();
+        }
+      });
+      var divTrash2;
+      $( ".divTrash2" ).click(function() {
+        if ( divTrash2 ) {
+          divTrash2.appendTo( "body" );
+          divTrash2 = null;
+        } else {
+          divTrash2 = $( "#div2" ).detach();
+        }
+      });
+     
+        $( function() {
+          $( "#T1" ).sortable();
+          $( "#T1" ).disableSelection();
+        } );
+          $( function() {
+            $( "#T2" ).sortable();
+            $( "#T2" ).disableSelection();
+          });
+
+function myFunction1() {
+  document.getElementById("myTextarea1").disabled =false;
+}
+function myFunction2() {
+  document.getElementById("myTextarea2").disabled =false;
+}
+function myFunction3() {
+  document.getElementById("myTextarea3").disabled =false;
+}
+function myFunction4() {
+  document.getElementById("myTextarea4").disabled =false;
+}
+function myFunction5() {
+  document.getElementById("myTextarea5").disabled =false;
+}
+function myFunction6() {
+  document.getElementById("myTextarea6").disabled =false;
+}
+function myFunction7() {
+  document.getElementById("myTextarea7").disabled =false;
+}
+function myFunction8() {
+  document.getElementById("myTextarea8").disabled =false;
+}
+   </script>
+ </body> 
+</html>
